@@ -7,6 +7,7 @@ def parta(input: pandas.DataFrame) -> int:
     negative_values = sum(n > 0 for n in diff_array.values)
     return negative_values
 
+
 def partb(input: pandas.DataFrame) -> int:
     rolling_array = input.rolling(3).sum().diff()
     negative_values = sum(n > 0 for n in rolling_array.values)

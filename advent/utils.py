@@ -7,6 +7,7 @@ def filetostringlist(filename: str) -> List[str]:
         input = [line.rstrip() for line in f]
         return input
 
+
 def filetointlist(filename: str) -> List[int]:
     with open(filename) as f:
         input = [int(line.rstrip()) for line in f]
