@@ -36,9 +36,24 @@ def find_lowpoints(df: pandas.DataFrame) -> int:
     return sum(lowpoints)
 
 
+def partb(df: pandas.DataFrame) -> int:
+    for y in range(df.shape[0]):  # iterate over rows
+        for x in range(df.shape[1]):  # iterate over columns
+            basin(x, y, df)
+    return 0
+
+
+def basin(x: int, y: int, df: pandas.DataFrame) -> int:
+    for y in range(df.shape[0]):  # iterate over rows
+        for x in range(df.shape[1]):  # iterate over columns
+            print(x, y)
+    return 0
+
+
 if __name__ == "__main__":
-    inputList = filetostringlist("advent/nine/input.txt")
+    inputList = filetostringlist("advent/nine/test.txt")
     df = pandas.DataFrame(
         list([int(a) for a in str(line)] for line in inputList), dtype=int
     )
-    print(find_lowpoints(df))
+    # print(find_lowpoints(df))
+    print(partb(df))
